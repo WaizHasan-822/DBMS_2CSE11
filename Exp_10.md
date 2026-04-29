@@ -18,7 +18,7 @@
 
 ## 1. Display the names of employees from department number 10 with salary greater than that of any employee working in other departments.
 
-MariaDB [manas_db]> SELECT ename FROM emp
+MariaDB [waiz_db]> SELECT ename FROM emp
                  -> WHERE deptno = 10
                  -> AND sal > ANY(
                  -> SELECT sal
@@ -35,7 +35,7 @@ Time: 0.014s
 
 ## 2. Display the names of employee from department number 10 with salary greater than that of all employee working in other departments.
 
-MariaDB [manas_db]> SELECT ename FROM emp
+MariaDB [waiz_db]> SELECT ename FROM emp
                  -> WHERE deptno = 10
                  -> AND sal > ALL(
                  -> SELECT sal 
@@ -51,7 +51,7 @@ Time: 0.027s
 
 ## 3. Display the details of employees who are in sales dept and grade is C.
 
-MariaDB [manas_db]> SELECT e.*
+MariaDB [waiz_db]> SELECT e.*
                  -> FROM emp e
                  -> JOIN dept d ON e.deptno = d.deptno
                  -> JOIN salgrade s ON e.sal BETWEEN s.losal AND s.hisal
@@ -69,7 +69,7 @@ Time: 0.009s
 
 ## 4. Display those who are not managers and who are managers anyone.
 
-MariaDB [manas_db]> SELECT *
+MariaDB [waiz_db]> SELECT *
                  -> FROM emp
                  -> WHERE empno NOT IN (
                  -> SELECT DISTINCT mgr
@@ -93,7 +93,7 @@ Time: 0.016s
 
 ## 5. Display those employees whose manager name is jones.
 
-MariaDB [manas_db]> SELECT e.ename
+MariaDB [waiz_db]> SELECT e.ename
                  -> FROM emp e
                  -> JOIN emp m ON e.mgr = m.empno
                  -> WHERE m.ename = 'JONES';
@@ -109,7 +109,7 @@ Time: 0.009s
 
 ## 6. Display ename who are working in sales dept.
 
-MariaDB [manas_db]> SELECT e.ename
+MariaDB [waiz_db]> SELECT e.ename
                  -> FROM emp e
                  -> JOIN dept d ON e.deptno = d.deptno
                  -> WHERE d.dname = 'SALES';
@@ -128,7 +128,7 @@ Time: 0.034s
 
 ## 7. Display employee name, deptname, salary and comm. For those sal in between 2000 to 5000 while location is Chennai.
 
-MariaDB [manas_db]> SELECT e.ename, d.dname, e.sal, e.comm
+MariaDB [waiz_db]> SELECT e.ename, d.dname, e.sal, e.comm
                  -> FROM emp e
                  -> JOIN dept d ON e.deptno = d.deptno
                  -> WHERE e.sal BETWEEN 2000 AND 5000
@@ -147,7 +147,7 @@ Time: 0.015s
 
 ## 8 .Display those employees whose salary greater than his manager salary.
 
-MariaDB [manas_db]> SELECT e.ename
+MariaDB [waiz_db]> SELECT e.ename
                  -> FROM emp e
                  -> JOIN emp m ON e.mgr = m.empno
                  -> WHERE e.sal > m.sal;
@@ -163,7 +163,7 @@ Time: 0.034s
 
 ## 9. Display those employees who are working in the same dept where his manager is working.
 
-MariaDB [manas_db]> SELECT e.ename
+MariaDB [waiz_db]> SELECT e.ename
                  -> FROM emp e
                  -> JOIN emp m ON e.mgr = m.empno
                  -> WHERE e.deptno = m.deptno;
@@ -186,7 +186,7 @@ Time: 0.009s
 
 ## 10. Display grade and employees name for the dept no 10 or 30 but grade is not D, while joined the company before 31-dec-82.
 
-MariaDB [manas_db]> SELECT s.grade, e.ename
+MariaDB [waiz_db]> SELECT s.grade, e.ename
                  -> FROM emp e
                  -> JOIN salgrade s ON e.sal BETWEEN s.losal AND s.hisal
                  -> WHERE e.deptno IN (10, 30)
