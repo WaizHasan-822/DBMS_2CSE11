@@ -1,4 +1,4 @@
-# Assignment 0  
+# EXPERIMENT 0  
 **Date:** 01-02-2026  
 
 ## Creation of comp_db Database and emp & dept Tables with Inserted Values
