@@ -1,4 +1,4 @@
-# ASSIGNMENT 06  
+# EXPERIMENT 06  
 **Date:** 13-02-2026  
 
 ---
